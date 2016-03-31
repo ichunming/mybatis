@@ -1,0 +1,5 @@
+create table user(
+ID INT(20) PRIMARY KEY AUTO_INCREMENT,
+NAME CHAR(10),
+CODE CHAR(10)
+)
