@@ -8,12 +8,13 @@ package com.mybatis.test;
 import java.util.List;
 
 import com.mybatis.bean.User;
-import com.mybatis.dao.UserDao;
+import com.mybatis.dao.IUserDao;
+import com.mybatis.dao.UserDaoImpl;
 
 public class Test {
 
 	public static void main(String[] args) {
-		UserDao userDao = new UserDao();
+		IUserDao userDao = new UserDaoImpl();
 		/*User user = new User();
 		user.setName("Jack");
 		user.setAge("25");
