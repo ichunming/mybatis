@@ -27,4 +27,46 @@
 	<insert id="addUser" parameterType="com.mybatis.bean.User">
 		INSERT INTO tbl_user(name,age) VALUES(#{name},#{age})
 	</insert>
+	<select id="searchUserByNameAge" resultMap="UserResult" parameterType="java.util.Map">
+		SELECT <include refid="selectAllItem"/> FROM tbl_user
+		<where>
+			<if test="name != null and name != ''">
+				<!-- and name like CONCAT('%',#{name},'%') -->
+				<bind name="pattern" value="'%' + _parameter.name + '%'" />
+				and name like #{pattern}
+			</if>
+			<if test="age != null and age != ''">
+				and age = #{age}
+			</if>
+		</where>
+	</select>
+	<select id="searchUserById" resultMap="UserResult">
+		SELECT <include refid="selectAllItem"/> FROM tbl_user
+		<where>
+			<foreach collection="list" item="uid" open="AND (" separator="or" close=")">
+				uid = #{uid}
+			</foreach>
+		</where>
+	</select>
+	<update id="updateUser" parameterType="com.mybatis.bean.User">
+		UPDATE tbl_user
+		<set>
+			<if test="name != null and name != ''">
+				name = #{name},
+			</if>
+			<if test="age != null and age != ''">
+				age = #{age}
+			</if>
+		</set>
+		<where>
+			uid = #{uid}
+		</where>
+	</update>
+	<delete id="deleteUser" parameterType="int">
+		DELETE FROM tbl_user
+		<where>
+			uid = #{uid}
+		</where>
+	</delete>
+	<sql id="selectAllItem">uid, name, age</sql>
 </mapper>

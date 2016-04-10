@@ -14,4 +14,12 @@ public interface IUserDao {
 	public User getUser(int uid);
 	
 	public void addUser(User user);
+
+	public List<User> searchUserByNameAge(String name, String age);
+
+	public List<User> searchUserById(List<Integer> ids);
+
+	public void updateUser(User user);
+
+	public void deleteUser(int uid);
 }

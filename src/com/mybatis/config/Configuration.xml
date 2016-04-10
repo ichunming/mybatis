@@ -46,12 +46,19 @@
   </environments>
 
   <mappers>
+    <!-- com.mybatis.annotation.test Test用 -->
+    <!-- <mapper class="com.mybatis.annotation.UserMapper"/> -->
+    
+    <!-- com.mybatis.annotation.test Test2用 -->
+    <mapper class="com.mybatis.annotation.UserMapper2"/>
+    <mapper resource="com/mybatis/annotation/User.xml"/>
+    
     <!-- com.mybatis.mapper.test用 -->
-  	<mapper class="com.mybatis.mapper.UserMapper"/>
-    <mapper resource="com/mybatis/mapper/User.xml"/>
+  	<!-- <mapper class="com.mybatis.mapper.UserMapper"/>
+    <mapper resource="com/mybatis/mapper/User.xml"/> -->
     
     <!-- com.mybatis.test用 -->
-    <mapper resource="com/mybatis/config/sqlxml/User.xml"/>
+    <!-- <mapper resource="com/mybatis/config/sqlxml/User.xml"/> -->
   </mappers>
 
 </configuration>
