@@ -47,11 +47,12 @@
 
   <mappers>
     <!-- com.mybatis.annotation.test Test用 -->
-    <!-- <mapper class="com.mybatis.annotation.UserMapper"/> -->
+    <!-- <mapper class="com.mybatis.annotation.UserMapper"/>
+    <mapper resource="com/mybatis/annotation/User.xml"/> -->
     
     <!-- com.mybatis.annotation.test Test2用 -->
     <mapper class="com.mybatis.annotation.UserMapper2"/>
-    <mapper resource="com/mybatis/annotation/User.xml"/>
+    <!-- <mapper resource="com/mybatis/annotation/User.xml"/> -->
     
     <!-- com.mybatis.mapper.test用 -->
   	<!-- <mapper class="com.mybatis.mapper.UserMapper"/>

@@ -17,6 +17,11 @@ public class Test {
 			sqlSession = dbAccess.getSqlSession();
 			userMapper = sqlSession.getMapper(UserMapper.class);
 			
+			User user = new User();
+			user.setName("Jim");
+			user.setAge("26");
+			userMapper.addUser(user);
+			
 			List<User> userList = userMapper.getAllUser();
 			
 			for(int i=0; i<userList.size(); i++) {
