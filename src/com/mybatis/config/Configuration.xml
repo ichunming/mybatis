@@ -39,8 +39,8 @@
       <dataSource type="UNPOOLED">
         <property name="driver" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/study"/>
-        <property name="username" value="zhangchunming"/>
-        <property name="password" value="19900201"/>
+        <property name="username" value="***"/>
+        <property name="password" value="***"/>
       </dataSource>
     </environment>
   </environments>
